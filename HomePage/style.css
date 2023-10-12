@@ -2,3 +2,16 @@
 .body {
     margin: 0;
 }
+
+.imageCaption {
+    color: red;
+}
+
+.imageCard img{
+    max-width: 600px;
+    max-height: 400px;
+}
+
+.imageCard {
+    background-color: green;
+}
