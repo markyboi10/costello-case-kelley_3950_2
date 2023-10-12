@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body class="body">
 
     <header class="header">HAVE A QUESTION</header>
 
@@ -19,10 +19,28 @@
     </div>
 
     <!-- Main content goes here -->
-    <div>
-
+    <div class="main">
+        <div class="box">
+            <form class="custom-form">
+                <table>
+                    <tr>
+                        <td><label for="email">Email:</label></td>
+                        <td><input type="text" id="email" name="email"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="subject">Subject:</label></td>
+                        <td><input type="text" id="subject" name="subject"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="content">Content:</label></td>
+                        <td><textarea id="content" name="content" rows="4" cols="30"></textarea></td>
+                    </tr>
+                </table>
+            </form>
+            <a href="mailto:mark.case102@gmail.com">Example mailto link</a>
+        </div>
     </div>
-
+    
     <footer class="footer">
         <u>
             Contact
@@ -38,3 +56,5 @@
             </p>
         </div>
     </footer>
+
+</body>
