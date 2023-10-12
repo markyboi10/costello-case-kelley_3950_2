@@ -1,0 +1,66 @@
+.header {
+    height: 7.5vh;
+    font-size: 40px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: rgb(223, 227, 235);
+    color: rgb(69, 69, 69);
+}
+
+
+.top_nav {
+    background-color: rgb(223, 227, 235);
+    text-align: center;
+    height: 3vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Surronding border */
+    border: 2.5px solid rgb(69, 69, 69);
+}
+
+/* class for <a> attributs in nav_text */
+.nav_text a {
+    text-decoration: none;
+    /* Sets <a>'s inline (left to right) */
+    display: inline-block;
+    font-weight: bold;
+    /* Spacing between text */
+    padding: 0 90px;
+    /* Vertical borders */
+    border-left: 2px solid rgb(69, 69, 69);
+}
+
+/* Remove left border on left-most child ("Home") */
+.top_nav a:first-child {
+    border-left: none;
+}
+
+.footer {
+    height: 10vh;
+    background-color: rgb(223, 227, 235);
+}
+
+/* class for <u> attributs in footer */
+.footer u {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    padding-top: 10px;
+}
+
+/* class for <p> attributs in footer */
+.footer p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-content {
+    font-style: italic;
+    background-color: rgb(223, 227, 235);
+}
