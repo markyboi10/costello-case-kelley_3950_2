@@ -4,6 +4,7 @@
     background-color: #f28500;
 }
 
+/* Center content */
 .main {
     display: flex;
     justify-content: center;
@@ -22,6 +23,7 @@
     box-shadow: 7px 7px 5px rgba(0, 0, 0, 1);
 }
 
+/* Box header */
 .box h {
     font-size: 40px;
     display: flex;
@@ -32,7 +34,7 @@
     font-weight: bold;
 }
 
-/* Alighnment of input boxes */
+/* Alignment of input boxes */
 .custom-form {
     text-align: left;
     font-size: 17px;
@@ -40,21 +42,24 @@
     font-weight: bold;
 }
 
+/* Box text color */
 .text {
     color: #f28500;
 }
 
+/* Placeholder text color */
 .input_boxes::placeholder,
 .textarea::placeholder {
     color: #aaa;
-    /* Placeholder text color */
 }
 
+/* Placeholder transparency on focus */
 input:focus::placeholder,
 textarea:focus::placeholder {
     color: transparent;
 }
 
+/* Input box sizes */
 .input_boxes {
     border-radius: 3.5px;
     height: 18px;
@@ -78,6 +83,7 @@ label {
     color: black;
 }
 
+/* Button attributes */
 .buttons {
     margin-top: 40px;
     margin-right: 20px;
@@ -114,6 +120,7 @@ label {
     right: 0;
 }
 
+/* Messages for email validity */
 .error-message {
     font-size: 12px;
     color: red;
