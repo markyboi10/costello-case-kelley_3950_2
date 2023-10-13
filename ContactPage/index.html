@@ -49,7 +49,7 @@
             </form>
 
             <div class="main">
-                <button type="button" class="buttons"><span>Clear </span></button>
+                <button type="button" class="buttons" onclick="clearFields()"><span>Clear </span></button>
                 <button type="button" class="buttons" onclick="sendEmail()"><span>Submit </span></button>
 
             </div>
@@ -85,9 +85,13 @@
     }
 
     function checkEmail() {
+        document.getElementById("emailError").innerHTML = "";
+        document.getElementById("successMessage").innerHTML = "";
 
         var emailInput = document.getElementById("email");
         var email = emailInput.value;
+        document.getElementById("email").style.border = "";
+
         // Check email validity
         if (!validateEmail(email)) { // not valid
             document.getElementById("emailError").innerHTML = "Invalid email address";
@@ -121,6 +125,12 @@
 
         window.open(mailtoLink);
 
+        document.getElementById("email").value = "";
+        document.getElementById("subject").value = "";
+        document.getElementById("content").value = "";
+    }
+
+    function clearFields() {
         document.getElementById("email").value = "";
         document.getElementById("subject").value = "";
         document.getElementById("content").value = "";
