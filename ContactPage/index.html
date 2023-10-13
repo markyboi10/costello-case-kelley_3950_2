@@ -24,23 +24,32 @@
             <form class="custom-form">
                 <table>
                     <tr>
-                        <td><label for="email">Email:</label></td>
-                        <td><input type="text" id="email" name="email"></td>
+                        <td><label for="email" class="text">Email:</label></td>
+                        <td><input type="text" id="email" name="email" class="input_boxes" placeholder="doej@gmail.com">
+                        </td>
                     </tr>
                     <tr>
-                        <td><label for="subject">Subject:</label></td>
-                        <td><input type="text" id="subject" name="subject"></td>
+                        <td><label for="subject" class="text">Subject:</label></td>
+                        <td><input type="text" id="subject" name="subject" class="input_boxes"
+                                placeholder="Photography Cost"></td>
                     </tr>
                     <tr>
-                        <td><label for="content">Content:</label></td>
-                        <td><textarea id="content" name="content" rows="4" cols="30"></textarea></td>
+                        <td><label for="content" class="text">Content:</label></td>
+                        <td><textarea id="content" name="content" rows="4" cols="30" class="input_boxes"
+                                placeholder="Enter your content"></textarea></td>
                     </tr>
                 </table>
             </form>
-            <a href="mailto:mark.case102@gmail.com">Example mailto link</a>
+
+            <div class="main">
+                <button type="button" class="buttons"><span>Clear </span></button>
+                <button type="button" class="buttons" onclick="sendEmail()"><span>Submit </span></button>
+
+            </div>
+
         </div>
     </div>
-    
+
     <footer class="footer">
         <u>
             Contact
@@ -56,5 +65,21 @@
             </p>
         </div>
     </footer>
+
+    <script>
+        function sendEmail() {
+            var email = document.getElementById("email").value;
+            var subject = document.getElementById("subject").value;
+            var content = document.getElementById("content").value;
+
+            var mailtoLink = 'mailto:' + email + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(content);
+
+            window.open(mailtoLink);
+
+            document.getElementById("email").value = "";
+            document.getElementById("subject").value = "";
+            document.getElementById("content").value = "";
+        }
+    </script>
 
 </body>
