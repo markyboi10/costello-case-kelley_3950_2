@@ -21,11 +21,18 @@
     <!-- Main content goes here -->
     <div class="main">
         <div class="box">
+            <h>
+                SEND A MESSAGE
+            </h>
             <form class="custom-form">
                 <table>
                     <tr>
-                        <td><label for="email" class="text">Email:</label></td>
-                        <td><input type="text" id="email" name="email" class="input_boxes" placeholder="doej@gmail.com">
+                        <td><label for="email" class="text">Email:</label>
+                        </td>
+                        <td><input type="text" id="email" name="email" class="input_boxes" placeholder="doej@gmail.com"
+                                onfocusout="checkEmail()">
+                            <div id="emailError" class="error-message"></div>
+                            <div id="successMessage" class="success-message"></div>
                         </td>
                     </tr>
                     <tr>
@@ -35,7 +42,7 @@
                     </tr>
                     <tr>
                         <td><label for="content" class="text">Content:</label></td>
-                        <td><textarea id="content" name="content" rows="4" cols="30" class="input_boxes"
+                        <td><textarea id="content" name="content" class="input_area"
                                 placeholder="Enter your content"></textarea></td>
                     </tr>
                 </table>
@@ -49,37 +56,73 @@
 
         </div>
     </div>
-
-    <footer class="footer">
-        <u>
-            Contact
-        </u>
-
-        <div class="footer-content">
-            <p>
-                casem - costellod - kelleys
-            </p>
-
-            <p>
-                @merrimack.edu
-            </p>
-        </div>
-    </footer>
-
-    <script>
-        function sendEmail() {
-            var email = document.getElementById("email").value;
-            var subject = document.getElementById("subject").value;
-            var content = document.getElementById("content").value;
-
-            var mailtoLink = 'mailto:' + email + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(content);
-
-            window.open(mailtoLink);
-
-            document.getElementById("email").value = "";
-            document.getElementById("subject").value = "";
-            document.getElementById("content").value = "";
-        }
-    </script>
-
 </body>
+
+<footer class="footer">
+    <u>
+        Contact
+    </u>
+
+    <div class="footer-content">
+        <p>
+            casem - costellod - kelleys
+        </p>
+
+        <p>
+            @merrimack.edu
+        </p>
+    </div>
+</footer>
+
+
+
+<script>
+
+    // Regex for email
+    function validateEmail(email) {
+        var regex = /^\S+@\S+\.\S+$/;
+        return regex.test(email);
+    }
+
+    function checkEmail() {
+
+        var emailInput = document.getElementById("email");
+        var email = emailInput.value;
+        // Check email validity
+        if (!validateEmail(email)) { // not valid
+            document.getElementById("emailError").innerHTML = "Invalid email address";
+            document.getElementById("email").style.border = "2px solid red";
+            return false;
+        } else { // valid
+            document.getElementById("successMessage").innerHTML = "Valid email address";
+            return true;
+        }
+    }
+
+    //mailto call
+    function sendEmail() {
+        var isValid = checkEmail();
+        if (!isValid) {
+            return;
+        }
+        // Reset fields empty
+        document.getElementById("emailError").innerHTML = "";
+        document.getElementById("successMessage").innerHTML = "";
+        document.getElementById("email").style.border = "";
+
+        // Get values
+        var email = document.getElementById("email").value;
+        var subject = document.getElementById("subject").value;
+        var content = document.getElementById("content").value;
+
+        // var with mailto objects
+        var mailtoLink = 'mailto:mark.case102@gmail.com?subject=' + encodeURIComponent(subject) +
+            '&body=' + encodeURIComponent(content + '\n\nreply-to: ' + email);
+
+        window.open(mailtoLink);
+
+        document.getElementById("email").value = "";
+        document.getElementById("subject").value = "";
+        document.getElementById("content").value = "";
+    }
+</script>
