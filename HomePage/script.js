@@ -1,3 +1,4 @@
+var images = [];
 // Image class
 function Image(imageSrc, desc, citeSrc) {
     this.imgSrc = imageSrc;
@@ -33,17 +34,27 @@ function Image(imageSrc, desc, citeSrc) {
 
 
 // Create an image
-var image = new Image(
+images.push(new Image(
     "car.jpg",
     "Hello, World!",
     "Google.com"
-);
+));
 
-var image2 = new Image(
+images.push(new Image(
     "Home page concept.png",
     "This is a concept of the home page",
     "Derek Costello"
-)
+));
 
-document.body.appendChild(image.getFormattedHTML());
-document.body.appendChild(image2.getFormattedHTML());
+for(let i = 0; i < 8; i++) {
+    images.push(new Image(
+        "",
+        "Test" + i,
+        "Test" + i
+    ))
+}
+
+const albumDiv = document.getElementById("album");
+for(let index in images) {
+    albumDiv.appendChild(images[index].getFormattedHTML());
+}

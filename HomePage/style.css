@@ -3,15 +3,30 @@
     margin: 0;
 }
 
+#album {
+    width: 100%;
+    background-color: lightgoldenrodyellow;
+}
+
 .imageCaption {
     color: red;
 }
 
 .imageCard img{
-    max-width: 600px;
-    max-height: 400px;
+    position: relative;
+    height: 325px;
+    width: 325px;
+    object-fit: cover; /* Maintains aspect ratio of image while covering the given area*/
+    border-radius: 25px;
+    /*margin-top: 15px;*/
 }
 
 .imageCard {
     background-color: green;
+    text-align: center;
+    height: 450px;
+    width: 325px;
+    border: solid black;
+    
+    border-radius: 25px;
 }
