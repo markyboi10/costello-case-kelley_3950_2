@@ -35,27 +35,53 @@ function Image(imageSrc, desc, citeSrc) {
 
 // Create an image
 images.push(new Image(
-    "car.jpg",
+    "AMGGT.png",
     "Hello, World!",
     "Google.com"
 ));
 
 images.push(new Image(
     "",
+    "C7.png",
     "This is a concept of the home page",
     "Derek Costello"
 ));
 
-for(let i = 0; i < 8; i++) {
-    images.push(new Image(
-        "",
-        "Test" + i,
-        "Test" + i
-    ))
-}
+
+images.push(new Image(
+    "m4GT3.png"
+));
+
+images.push(new Image(
+    "z3.png"
+));
+
+images.push(new Image(
+    "650s.png"
+));
+
+images.push(new Image(
+    "296Ferrari.png"
+));
+
+images.push(new Image(
+    "PorscheVsSupra.png"
+));
+
+images.push(new Image(
+    "R8LMSpng.png"
+));
+
+images.push(new Image(
+    "VantageGT3.png"
+));
+
+images.push(new Image(
+    "HuracanGT3.png"
+));
 
 const albumDiv = document.getElementById("album");
-for(let index in images) {
+for (let index in images) {
     albumDiv.appendChild(images[index].getFormattedHTML());
 }
 
