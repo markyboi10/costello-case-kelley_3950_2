@@ -13,20 +13,21 @@
 }
 
 .imageCard img{
-    position: relative;
     height: 325px;
     width: 325px;
     object-fit: cover; /* Maintains aspect ratio of image while covering the given area*/
-    border-radius: 25px;
+    /*border-radius: 25px;*/
     /*margin-top: 15px;*/
 }
 
 .imageCard {
-    background-color: green;
+    display: inline-block;
+    background-color: lightsteelblue;
     text-align: center;
     height: 450px;
     width: 325px;
-    border: solid black;
+    overflow: hidden;
+    margin: 10px;
     
     border-radius: 25px;
 }

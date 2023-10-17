@@ -41,7 +41,7 @@ images.push(new Image(
 ));
 
 images.push(new Image(
-    "Home page concept.png",
+    "",
     "This is a concept of the home page",
     "Derek Costello"
 ));
@@ -58,3 +58,12 @@ const albumDiv = document.getElementById("album");
 for(let index in images) {
     albumDiv.appendChild(images[index].getFormattedHTML());
 }
+
+
+// NOTES FOR DRAG AND DROP:
+
+// NOTES FOR HOVERING:
+//  mouseover: object.class = hoveredCard (changes to larger size)
+//  bool isHovering == true -> if(!hoveredCard) { object.class = shrinkCard };
+//      Need to learn how to set the transition (probably at class declaration)
+//  bool isHovering == false -> object.class = imageCard;
