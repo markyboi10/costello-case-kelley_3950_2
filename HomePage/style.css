@@ -1,4 +1,10 @@
-/* Remove margins from body*/
+/* Set base font size for mobile devices */
+html {
+    font-size: 75%;
+    /* 1rem = 10px, so 62.5% of 16px (default browser font size) is 10px */
+}
+
+/* Remove margins from body */
 .body {
     margin: 0;
 }
@@ -6,28 +12,39 @@
 #album {
     width: 100%;
     background-color: lightgoldenrodyellow;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    /* Distribute space evenly between cards */
+    align-items: center;
+    /* Center the cards vertically */
+    gap: 1.5rem;
+    /* Adjust the gap between cards using rem units */
 }
 
 .imageCaption {
     color: red;
 }
 
-.imageCard img{
-    height: 325px;
-    width: 325px;
-    object-fit: cover; /* Maintains aspect ratio of image while covering the given area*/
-    /*border-radius: 25px;*/
-    /*margin-top: 15px;*/
+.imageCard img {
+    height: 32.5rem;
+    /* Convert pixel value to rem units */
+    width: 32.5rem;
+    /* Convert pixel value to rem units */
+    object-fit: cover;
 }
 
 .imageCard {
     display: inline-block;
     background-color: lightsteelblue;
     text-align: center;
-    height: 450px;
-    width: 325px;
+    height: 45rem;
+    /* Convert pixel value to rem units */
+    width: 32.5rem;
+    /* Convert pixel value to rem units */
     overflow: hidden;
-    margin: 10px;
-    
-    border-radius: 25px;
+    margin: 1rem;
+    /* Convert pixel value to rem units */
+    border-radius: 2.5rem;
+    /* Convert pixel value to rem units */
 }

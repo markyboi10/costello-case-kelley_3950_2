@@ -41,7 +41,6 @@ images.push(new Image(
 ));
 
 images.push(new Image(
-    "",
     "C7.png",
     "This is a concept of the home page",
     "Derek Costello"
