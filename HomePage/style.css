@@ -1,7 +1,6 @@
 /* Set base font size for mobile devices */
 html {
     font-size: 75%;
-    /* 1rem = 10px, so 62.5% of 16px (default browser font size) is 10px */
 }
 
 /* Remove margins from body */
@@ -15,11 +14,8 @@ html {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    /* Distribute space evenly between cards */
     align-items: center;
-    /* Center the cards vertically */
     gap: 1.5rem;
-    /* Adjust the gap between cards using rem units */
 }
 
 .imageCaption {
@@ -28,9 +24,7 @@ html {
 
 .imageCard img {
     height: 32.5rem;
-    /* Convert pixel value to rem units */
     width: 32.5rem;
-    /* Convert pixel value to rem units */
     object-fit: cover;
 }
 
@@ -38,13 +32,34 @@ html {
     display: inline-block;
     background-color: lightsteelblue;
     text-align: center;
-    height: 45rem;
-    /* Convert pixel value to rem units */
+    height: 39rem;
     width: 32.5rem;
-    /* Convert pixel value to rem units */
     overflow: hidden;
     margin: 1rem;
-    /* Convert pixel value to rem units */
     border-radius: 2.5rem;
-    /* Convert pixel value to rem units */
+
+    --g: 4px;
+    /* the gap */
+    --b: 12px;
+    /* border thickness*/
+    --c: #669706;
+    /* the color */
+
+
+    padding: calc(var(--g) + var(--b));
+    --_c: #0000 0 25%, var(--c) 0 50%;
+    --_g1: repeating-linear-gradient(90deg, var(--_c)) repeat-x;
+    --_g2: repeating-linear-gradient(180deg, var(--_c)) repeat-y;
+    background:
+        var(--_g1) var(--_p, 25%) 0, var(--_g2) 0 var(--_p, 125%),
+        var(--_g1) var(--_p, 125%) 100%, var(--_g2) 100% var(--_p, 25%);
+    background-size: 200% var(--b), var(--b) 200%;
+    cursor: pointer;
+    filter: grayscale(50%);
+    transition: .3s;
+}
+
+.imageCard:hover {
+    --_p: 75%;
+    filter: grayscale(0%);
 }
