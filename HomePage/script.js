@@ -1,88 +1,51 @@
-var images = [];
-// Image class
-function Image(imageSrc, desc, citeSrc) {
-    this.imgSrc = imageSrc;
-    this.description = desc;
-    this.citation = "Source: " + citeSrc;
-    this.getFormattedHTML = function () {
-        var div = document.createElement('div');
-        var img = document.createElement('img');
-        var caption = document.createElement('div');
-        var description = document.createElement('p');
-        var citation = document.createElement('p');
-        var descTxt = document.createTextNode(this.description);
-        var citeTxt = document.createTextNode(this.citation);
+// Define the Image class
+class Image {
+    constructor(imageSrc, description, citeSrc = '') {
+        this.imgSrc = imageSrc;
+        this.description = description;
+        this.citation = `${citeSrc}`;
+    }
 
-        // Attach the caption text to its elements
-        description.appendChild(descTxt);
-        citation.appendChild(citeTxt);
+    getFormattedHTML() {
+        const div = document.createElement('div');
+        const img = document.createElement('img');
+        const caption = document.createElement('div');
+        const description = document.createElement('p');
+        const citation = document.createElement('p');
+        description.textContent = this.description;
+        citation.textContent = this.citation;
+
         caption.appendChild(description);
         caption.appendChild(citation);
-        caption.className = "imageCaption";
+        caption.className = 'imageCaption';
 
-        // Update the image source
         img.src = this.imgSrc;
-
         div.appendChild(img);
         div.appendChild(caption);
-
-        div.className = "imageCard";
+        div.className = 'imageCard';
 
         return div;
     }
 }
 
+// Create an array of images
+const images = [
+    new Image('AMGGT.png', 'AMG GT Black Series', 'Road & Track'),
+    new Image('C7.png', 'C7 GT3-R', 'Registry of Corvette Race Cars'),
+    new Image('m4GT3.png', 'BMW M4 GT3', "Auto Addiction"),
+    new Image('z3.png', 'BMW Z3 GT3', 'BMW Blog'),
+    new Image('650s.png', 'McLaren 650s GT3', 'Sportscar Racing News'),
+    new Image('296Ferrari.png', "Ferrari 296 GT3", "Top Gear"),
+    new Image('PorscheVsSupra.png', "Porsche 911-R GT3 vs Toyota Supra GT3", "Daily Sport Car"),
+    new Image('R8LMS.png', "Audi R8 LMS GT3", "Road and Track"),
+    new Image('VantageGT3.png', "Aston Martin Vantage GT3", "Race Department"),
+    new Image('HuracanGT3.png', "Lamborghini Huracan GT3 EVO II", "Lamborghini"),
+];
 
-// Create an image
-images.push(new Image(
-    "AMGGT.png",
-    "Hello, World!",
-    "Google.com"
-));
-
-images.push(new Image(
-    "C7.png",
-    "This is a concept of the home page",
-    "Derek Costello"
-));
-
-
-images.push(new Image(
-    "m4GT3.png"
-));
-
-images.push(new Image(
-    "z3.png"
-));
-
-images.push(new Image(
-    "650s.png"
-));
-
-images.push(new Image(
-    "296Ferrari.png"
-));
-
-images.push(new Image(
-    "PorscheVsSupra.png"
-));
-
-images.push(new Image(
-    "R8LMSpng.png"
-));
-
-images.push(new Image(
-    "VantageGT3.png"
-));
-
-images.push(new Image(
-    "HuracanGT3.png"
-));
-
-const albumDiv = document.getElementById("album");
-for (let index in images) {
-    albumDiv.appendChild(images[index].getFormattedHTML());
-}
+const albumDiv = document.getElementById('album');
+images.forEach((image) => {
+    albumDiv.appendChild(image.getFormattedHTML());
+});
 
 
 // NOTES FOR DRAG AND DROP:
@@ -92,3 +55,4 @@ for (let index in images) {
 //  bool isHovering == true -> if(!hoveredCard) { object.class = shrinkCard };
 //      Need to learn how to set the transition (probably at class declaration)
 //  bool isHovering == false -> object.class = imageCard;
+

@@ -9,6 +9,7 @@ html {
 }
 
 #album {
+
     width: 100%;
     background-color: lightgoldenrodyellow;
     display: flex;
@@ -16,6 +17,12 @@ html {
     justify-content: space-around;
     align-items: center;
     gap: 1.5rem;
+}
+
+#album h {
+    padding-top: 2rem;
+    font-size: 5rem;
+    color: rgb(69, 69, 69);
 }
 
 .imageCaption {
@@ -26,6 +33,7 @@ html {
     height: 32.5rem;
     width: 32.5rem;
     object-fit: cover;
+
 }
 
 .imageCard {
@@ -55,11 +63,21 @@ html {
         var(--_g1) var(--_p, 125%) 100%, var(--_g2) 100% var(--_p, 25%);
     background-size: 200% var(--b), var(--b) 200%;
     cursor: pointer;
-    filter: grayscale(50%);
-    transition: .3s;
+    filter: grayscale(70%);
+    cursor: grab;
+    transition: .5s;
 }
 
 .imageCard:hover {
     --_p: 75%;
     filter: grayscale(0%);
+}
+
+
+.imageCard:active {
+    cursor: grabbing;
+}
+
+.imageCard.dragover {
+    background-color: lightcyan;
 }
