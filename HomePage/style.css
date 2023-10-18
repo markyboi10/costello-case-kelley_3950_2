@@ -1,4 +1,83 @@
-/* Remove margins from body*/
+/* Set base font size for mobile devices */
+html {
+    font-size: 75%;
+}
+
+/* Remove margins from body */
 .body {
     margin: 0;
+}
+
+#album {
+
+    width: 100%;
+    background-color: lightgoldenrodyellow;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+#album h {
+    padding-top: 2rem;
+    font-size: 5rem;
+    color: rgb(69, 69, 69);
+}
+
+.imageCaption {
+    color: red;
+}
+
+.imageCard img {
+    height: 32.5rem;
+    width: 32.5rem;
+    object-fit: cover;
+
+}
+
+.imageCard {
+    display: inline-block;
+    background-color: lightsteelblue;
+    text-align: center;
+    height: 39rem;
+    width: 32.5rem;
+    overflow: hidden;
+    margin: 1rem;
+    border-radius: 2.5rem;
+
+    --g: 4px;
+    /* the gap */
+    --b: 12px;
+    /* border thickness*/
+    --c: #669706;
+    /* the color */
+
+
+    padding: calc(var(--g) + var(--b));
+    --_c: #0000 0 25%, var(--c) 0 50%;
+    --_g1: repeating-linear-gradient(90deg, var(--_c)) repeat-x;
+    --_g2: repeating-linear-gradient(180deg, var(--_c)) repeat-y;
+    background:
+        var(--_g1) var(--_p, 25%) 0, var(--_g2) 0 var(--_p, 125%),
+        var(--_g1) var(--_p, 125%) 100%, var(--_g2) 100% var(--_p, 25%);
+    background-size: 200% var(--b), var(--b) 200%;
+    cursor: pointer;
+    filter: grayscale(70%);
+    cursor: grab;
+    transition: .5s;
+}
+
+.imageCard:hover {
+    --_p: 75%;
+    filter: grayscale(0%);
+}
+
+
+.imageCard:active {
+    cursor: grabbing;
+}
+
+.imageCard.dragover {
+    background-color: lightcyan;
 }
