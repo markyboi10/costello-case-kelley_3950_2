@@ -35,6 +35,7 @@ html {
 .imageCard img {
     height: 32.5rem;
     width: 32.5rem;
+    border-radius: 1.25rem;
     object-fit: cover;
 
 }
@@ -74,4 +75,5 @@ html {
 .imageCard:hover {
     --_p: 75%;
     filter: grayscale(0%);
+    scale: 1.1;
 }
