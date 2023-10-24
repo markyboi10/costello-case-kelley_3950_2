@@ -28,6 +28,20 @@ class Image {
     }
 }
 
+// Sorting functions
+function sortRandomly(array){
+    // Inspiration for randomization: https://www.geeksforgeeks.org/how-to-shuffle-an-array-using-javascript/#
+    array.sort(() => Math.random() - 0.5);
+}
+
+function sortBySource(array) {
+    array.sort((image1, image2) => image1.citation.localeCompare(image2.citation));
+}
+
+function sortByFileName(array) {
+    array.sort((image1, image2) => image1.imgSrc.localeCompare(image2.imgSrc));
+}
+
 // Create an array of images
 const images = [
     new Image('AMGGT.png', 'AMG GT Black Series', 'Road & Track'),
@@ -41,6 +55,8 @@ const images = [
     new Image('VantageGT3.png', "Aston Martin Vantage GT3", "Race Department"),
     new Image('HuracanGT3.png', "Lamborghini Huracan GT3 EVO II", "Lamborghini"),
 ];
+// Randomize on page startup
+sortRandomly(images);
 
 const albumDiv = document.getElementById('album');
 images.forEach((image) => {
