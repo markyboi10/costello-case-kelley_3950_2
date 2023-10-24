@@ -42,6 +42,10 @@
 .footer {
     height: 10vh;
     background-color: rgb(223, 227, 235);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
 }
 
 /* class for <u> attributs in footer */
@@ -63,4 +67,5 @@
 .footer-content {
     font-style: italic;
     background-color: rgb(223, 227, 235);
+
 }
