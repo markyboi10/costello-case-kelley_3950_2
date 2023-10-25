@@ -8,7 +8,7 @@ html {
     margin: 0;
 }
 
-#album {
+#albumSection {
     width: 100%;
     background-color: lightgoldenrodyellow;
     display: flex;
@@ -21,7 +21,7 @@ html {
     padding-bottom: 13vh; /* Offset the footer */
 }
 
-#album h {
+#albumSection h {
     padding-top: 2rem;
     font-size: 5rem;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -68,11 +68,11 @@ html {
     cursor: pointer;
     filter: grayscale(70%);
     cursor: grab;
-    transition: .5s;
 }
 
 .imageCard:hover {
     --_p: 75%;
     filter: grayscale(0%);
     scale: 1.1;
+    transition: 0.5s;
 }

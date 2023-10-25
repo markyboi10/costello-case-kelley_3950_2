@@ -63,12 +63,8 @@ images.forEach((image) => {
     albumDiv.appendChild(image.getFormattedHTML());
 });
 
-
-// NOTES FOR DRAG AND DROP:
-
-// NOTES FOR HOVERING:
-//  mouseover: object.class = hoveredCard (changes to larger size)
-//  bool isHovering == true -> if(!hoveredCard) { object.class = shrinkCard };
-//      Need to learn how to set the transition (probably at class declaration)
-//  bool isHovering == false -> object.class = imageCard;
+new Sortable(albumDiv, {
+    animation: 400,
+    ghostClass: 'sortable-ghost'
+});
 
