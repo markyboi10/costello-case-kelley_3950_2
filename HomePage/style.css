@@ -76,3 +76,10 @@ html {
     scale: 1.1;
     transition: 0.5s;
 }
+
+.sortable-chosen{
+    --_p: 75%;
+    filter: grayscale(0%);
+    scale: 1.1;
+    transition: 0.5s;
+}
