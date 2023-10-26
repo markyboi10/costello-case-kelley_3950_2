@@ -20,9 +20,47 @@ html {
 }
 
 .albumSection h {
+    width: 100%;
+    text-align: center;
     padding-top: 2rem;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     color: rgb(69, 69, 69);
+}
+
+/* Button attributes */
+.buttons {
+    margin-right: 20px;
+    width: 200px;
+    height: 35px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: rgb(69, 69, 69);
+}
+
+.buttons span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+.buttons span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+
+.buttons:hover span {
+    padding-right: 25px;
+}
+
+.buttons:hover span:after {
+    opacity: 1;
+    right: 0;
 }
 
 #album,
