@@ -100,3 +100,7 @@ html {
     filter: grayscale(0%);
     scale: 1.1;
 }
+
+.sortable-ghost {
+    opacity: 0.3;
+}
