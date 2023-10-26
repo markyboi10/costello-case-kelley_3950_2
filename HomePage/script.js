@@ -48,6 +48,13 @@ images.forEach((image) => {
 });
 
 
+
+function init() {
+    dragula([document.querySelector('#album')]);
+}
+
+// NOTES FOR DRAG AND DROP:
+
 // NOTES FOR DRAG AND DROP:
 
 // NOTES FOR HOVERING:
