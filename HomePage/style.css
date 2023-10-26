@@ -10,7 +10,7 @@ html {
     min-height: 100vh;
 }
 
-#albumSection {
+.albumSection {
     width: 100%;
     background-color: lightgoldenrodyellow;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -19,14 +19,14 @@ html {
     /* Offset the footer */
 }
 
-#albumSection h {
+.albumSection h {
     padding-top: 2rem;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     color: rgb(69, 69, 69);
 }
 
 #album,
-#albumSection {
+.albumSection {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -35,14 +35,14 @@ html {
 }
 
 @media screen and (max-width: 767px) {
-    .test {
+    .albumSection h {
         font-size: 2rem;
     }
 }
 
 /* For larger screens (768px or wider) */
 @media screen and (min-width: 768px) {
-    .test {
+    .albumSection h {
         font-size: 4rem;
     }
 }
