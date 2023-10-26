@@ -56,7 +56,7 @@ new Sortable(albumDiv, {
 });
 
 // Sorting functions
-function sortRandomly(array){
+function sortRandomly(array) {
     // Inspiration for randomization: https://www.geeksforgeeks.org/how-to-shuffle-an-array-using-javascript/#
     array.sort(() => Math.random() - 0.5);
     updateListOnSort();
@@ -79,10 +79,10 @@ function updateListOnSort() {
         // Add events for hovering
         imageCard.addEventListener("mouseover", hoverAdd, false);
         imageCard.addEventListener("mouseout", hoverRemove, false);
-    
+
         var addDiv = document.createElement('div');
         addDiv.appendChild(imageCard);
-    
+
         albumDiv.appendChild(addDiv);
     });
 }
@@ -90,12 +90,12 @@ function updateListOnSort() {
 // Hover events
 var canChangeHover = true;
 hoverAdd = function (event) {
-    if(canChangeHover && !event.target.classList.contains("hovered"))
+    if (canChangeHover && !event.target.classList.contains("hovered"))
         event.target.classList.add("hovered");
 }
 
 hoverRemove = function (event) {
-    if(canChangeHover && event.target.classList.contains("hovered"))
+    if (canChangeHover && event.target.classList.contains("hovered"))
         event.target.classList.remove("hovered");
 }
 
