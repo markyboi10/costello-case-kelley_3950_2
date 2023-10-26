@@ -74,18 +74,16 @@ html {
     cursor: pointer;
     filter: grayscale(70%);
     cursor: grab;
-}
-
-.imageCard:hover {
-    --_p: 75%;
-    filter: grayscale(0%);
-    scale: 1.1;
+    
     transition: 0.5s;
 }
 
-.sortable-chosen {
+.imageCard * {
+    pointer-events: none;
+}
+
+.hovered {
     --_p: 75%;
     filter: grayscale(0%);
     scale: 1.1;
-    transition: 0.5s;
 }

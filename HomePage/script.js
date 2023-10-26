@@ -42,6 +42,18 @@ function sortByFileName(array) {
     array.sort((image1, image2) => image1.imgSrc.localeCompare(image2.imgSrc));
 }
 
+// Hover events
+var canChangeHover = true;
+hoverAdd = function (event) {
+    if(canChangeHover && !event.target.classList.contains("hovered"))
+        event.target.classList.add("hovered");
+}
+
+hoverRemove = function (event) {
+    if(canChangeHover && event.target.classList.contains("hovered"))
+        event.target.classList.remove("hovered");
+}
+
 // Create an array of images
 const images = [
     new Image('AMGGT.png', 'AMG GT Black Series', 'Road & Track'),
@@ -60,11 +72,25 @@ sortRandomly(images);
 
 const albumDiv = document.getElementById('album');
 images.forEach((image) => {
-    albumDiv.appendChild(image.getFormattedHTML());
+    var imageCard = image.getFormattedHTML();
+    // Add events for hovering
+    imageCard.addEventListener("mouseover", hoverAdd, false);
+    imageCard.addEventListener("mouseout", hoverRemove, false);
+
+    var addDiv = document.createElement('div');
+    addDiv.appendChild(imageCard);
+
+    albumDiv.appendChild(addDiv);
 });
 
 new Sortable(albumDiv, {
     animation: 400,
-    ghostClass: 'sortable-ghost'
+    ghostClass: 'sortable-ghost',
+    onChoose: (evt) => {
+        canChangeHover = false;
+    },
+    onUnchoose: (evt) => {
+        canChangeHover = true;
+    }
 });
 
