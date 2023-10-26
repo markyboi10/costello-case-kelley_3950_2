@@ -1,0 +1,18 @@
+.body {
+    margin: 0;
+    background-color: lightgoldenrodyellow;
+}
+
+.paraOne {
+    padding: 2rem;
+    border-style: solid;
+    border-radius: 3rem;
+    margin-top: 5rem;
+    margin-left: 15rem;
+    margin-right: 15rem;
+    text-align: center;
+    font-size: 1.2rem;
+    color: rgb(69, 69, 69);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: rgba(218, 165, 32, .3)
+}
